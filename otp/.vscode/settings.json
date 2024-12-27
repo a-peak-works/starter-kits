@@ -1,0 +1,38 @@
+{
+  "[typescript]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "deno.enablePaths": [
+    "supabase/functions"
+  ],
+  "deno.lint": true,
+  "deno.unstable": [
+    "bare-node-builtins",
+    "byonm",
+    "sloppy-imports",
+    "unsafe-proto",
+    "webgpu",
+    "broadcast-channel",
+    "worker-options",
+    "cron",
+    "kv",
+    "ffi",
+    "fs",
+    "http",
+    "net"
+  ],
+  "editor.fontSize": 14,
+  "editor.lineNumbers": "on",
+  "eslint.enable": false,
+  "liveServer.settings.port": 5501,
+  "tailwindCSS.experimental.classRegex": [
+    [
+      ":\\s*?[\"'`]([^\"'`]*).*?,"
+    ]
+  ],
+  "tailwindCSS.lint.cssConflict": "warning",
+  "tailwindCSS.lint.invalidScreen": "warning",
+  "tailwindCSS.lint.invalidTailwindDirective": "warning",
+  "tailwindCSS.lint.invalidVariant": "warning",
+  "tailwindCSS.lint.recommendedVariantOrder": "warning"
+}
