@@ -140,7 +140,7 @@ export const DropdownMenuSimpleWithFooter = ({
       <nav className='overflow-hidden rounded-xl bg-secondary shadow-xs ring-1 ring-inset ring-border-secondary md:rounded-2xl md:shadow-lg'>
         <ul className='flex flex-col gap-0.5 rounded-xl bg-primary py-2 ring-1 ring-inset ring-border-secondary md:rounded-t-2xl md:p-2'>
           {items.map(({ title, subtitle, href, Icon }) => (
-            <li>
+            <li key={title}>
               <NavMenuItemLink
                 icon={Icon}
                 title={head(prefix + '.' + title)}
