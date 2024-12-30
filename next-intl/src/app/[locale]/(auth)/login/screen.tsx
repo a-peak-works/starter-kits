@@ -20,8 +20,11 @@ import { FormEvent, useState } from 'react';
 import { Form } from '@/components/shared/inputs/form/form';
 import { Checkbox } from '@/components/shared/checkbox/checkbox';
 import { LogoMark } from '@/components/shared-assets/auth/logomark';
+import { useTranslations } from 'next-intl';
 
 export const LoginScreen = () => {
+  const t = useTranslations('login');
+  const btn = useTranslations('buttons');
   const { systemTheme } = useTheme();
   const [loading, setLoading] = useState(false);
 
@@ -37,9 +40,9 @@ export const LoginScreen = () => {
       redirect: false, // Prevent immediate redirect to handle feedback
     });
 
-    toast.custom((t) => (
+    toast.custom((m) => (
       <div
-        key={t}
+        key={m}
         className={cx(
           'relative light-mode z-[var(--z-index)] flex max-w-full flex-col gap-4 rounded-xl border border-primary bg-primary_alt p-4 shadow-lg xs:w-[var(--width)] xs:flex-row',
           systemTheme === 'dark' && 'dark-mode'
@@ -53,31 +56,26 @@ export const LoginScreen = () => {
 
         <div className='flex flex-1 flex-col gap-3 md:pr-8'>
           <div className='flex flex-col gap-1'>
-            <p className='text-fg-primary tt-sm-semi'>
-              {res?.error ? 'Something is happened' : 'Success!'}
-            </p>
             <p className='text-fg-secondary tt-sm'>
-              {res?.error
-                ? res?.error || "We couldn't log you in. Please try again."
-                : 'You have successfully logged in.'}
+              {res?.error ? t('toasts.error') : t('toasts.success')}
             </p>
           </div>
 
           <div className='flex gap-3'>
             <Button
-              onClick={() => toast.dismiss(t)}
+              onClick={() => toast.dismiss(m)}
               size='sm'
               color='link-gray'>
-              Dismiss
+              {btn('dismiss')}
             </Button>
           </div>
         </div>
 
         <div className='absolute right-2 top-2 flex items-center justify-center'>
           <CloseButton
-            onClick={() => toast.dismiss(t)}
+            onClick={() => toast.dismiss(m)}
             size='sm'
-            label='Dismiss'
+            label={btn('dismiss')}
           />
         </div>
       </div>
@@ -98,8 +96,8 @@ export const LoginScreen = () => {
             className='md:hidden'
           />
           <div className='flex flex-col gap-md'>
-            <h1 className='text-primary td-xs-semi'>Welcome back</h1>
-            <p className='text-tertiary tt-md'>Please enter your details.</p>
+            <h1 className='text-primary td-xs-semi'>{t('title')}</h1>
+            <p className='text-tertiary tt-md'>{t('desc')}</p>
           </div>
         </div>
 
@@ -111,7 +109,7 @@ export const LoginScreen = () => {
               isRequired
               type='email'
               name='email'
-              placeholder='Enter your email'
+              placeholder={t('placeholders.email')}
               size='md'
             />
             <Input
@@ -125,7 +123,7 @@ export const LoginScreen = () => {
 
           <div className='flex items-center'>
             <Checkbox
-              label='Remember for 30 days'
+              label={t('checkboxes.remember_for_30days')}
               name='remember'
             />
 
@@ -134,7 +132,7 @@ export const LoginScreen = () => {
               size='md'
               href='#'
               className='ml-auto'>
-              Forgot password
+              {btn('forgot_password')}
             </Button>
           </div>
 
@@ -147,23 +145,23 @@ export const LoginScreen = () => {
               }
               type='submit'
               size='lg'>
-              {!loading && 'Sign in'}
+              {!loading && btn('sign_in')}
             </Button>
             <SocialButton
               social='google'
               theme='color'>
-              Sign in with Google
+              {btn('sign_in_with_google')}
             </SocialButton>
           </div>
         </Form>
 
         <div className='flex justify-center gap-xs text-center'>
-          <span className='text-tertiary tt-sm'>Don't have an account?</span>
+          <span className='text-tertiary tt-sm'>{t('dont_have_account')}</span>
           <Button
             color='link-color'
             size='md'
             href='/signup'>
-            Sign up
+            {btn('sign_up')}
           </Button>
         </div>
       </div>

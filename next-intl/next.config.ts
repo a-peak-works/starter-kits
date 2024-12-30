@@ -3,11 +3,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin();
 
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
-});
-
-const nextConfig: NextConfig = withBundleAnalyzer({
+const nextConfig: NextConfig = {
   /* config options here */
   experimental: {
     optimizePackageImports: [
@@ -15,10 +11,7 @@ const nextConfig: NextConfig = withBundleAnalyzer({
       "motion",
       "recharts",
     ],
-    // turbo: {
-    //   treeShaking: true,
-    // },
   },
-});
+};
 
 export default withNextIntl(nextConfig);

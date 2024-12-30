@@ -16,6 +16,7 @@ import {
   DropdownMenuSimpleWithFooter,
   DropdownMenuWithTwoColsAndLinksAndFooter,
 } from '../dropdown-header-navigation';
+import { useTranslations } from 'next-intl';
 
 type HeaderNavItem = {
   label: string;
@@ -25,29 +26,33 @@ type HeaderNavItem = {
 
 const headerNavItems: HeaderNavItem[] = [
   {
-    label: 'Products',
+    label: 'products',
     href: '/products',
-    menu: <DropdownMenuSimpleWithFooter />,
+    menu: <DropdownMenuSimpleWithFooter prefix='products' />,
   },
-  { label: 'Services', href: '/Services', menu: <DropdownMenuFeatureCard /> },
-  { label: 'Pricing', href: '/pricing' },
   {
-    label: 'Resources',
-    href: '/resources',
-    menu: <DropdownMenuWithTwoColsAndLinksAndFooter />,
+    label: 'services',
+    href: '/Services',
+    menu: <DropdownMenuFeatureCard prefix='services' />,
   },
-  { label: 'About', href: '/about' },
+  { label: 'pricing', href: '/pricing' },
+  {
+    label: 'resources',
+    href: '/resources',
+    menu: <DropdownMenuWithTwoColsAndLinksAndFooter prefix='resources' />,
+  },
+  { label: 'about', href: '/about' },
 ];
 
 const footerNavItems = [
-  { label: 'About us', href: '/' },
-  { label: 'Press', href: '/products' },
-  { label: 'Careers', href: '/resources' },
-  { label: 'Legal', href: '/pricing' },
-  { label: 'Support', href: '/pricing' },
-  { label: 'Contact', href: '/pricing' },
-  { label: 'Sitemap', href: '/pricing' },
-  { label: 'Cookie settings', href: '/pricing' },
+  { label: 'about_us', href: '/' },
+  { label: 'press', href: '/products' },
+  { label: 'careers', href: '/resources' },
+  { label: 'legal', href: '/pricing' },
+  { label: 'support', href: '/pricing' },
+  { label: 'contact', href: '/pricing' },
+  { label: 'sitemap', href: '/pricing' },
+  { label: 'cookie_settings', href: '/pricing' },
 ];
 
 const MobileNavItem = (props: {
@@ -90,6 +95,8 @@ const MobileNavItem = (props: {
 };
 
 const MobileFooter = () => {
+  const btn = useTranslations('buttons');
+
   return (
     <div className='flex flex-col gap-8 border-t border-secondary px-4 py-6'>
       <div>
@@ -100,7 +107,7 @@ const MobileFooter = () => {
                 color='link-gray'
                 size='lg'
                 href={navItem.href}>
-                {navItem.label}
+                {btn(navItem.label)}
               </Button>
             </li>
           ))}
@@ -110,13 +117,13 @@ const MobileFooter = () => {
         <Button
           href='/signup'
           size='lg'>
-          Sign up
+          {btn('sign_up')}
         </Button>
         <Button
           href='/login'
           color='secondary-gray'
           size='lg'>
-          Log in
+          {btn('log_in')}
         </Button>
       </div>
     </div>
@@ -139,6 +146,8 @@ export const Header = ({
   className,
   autoOpenMenu,
 }: HeaderProps) => {
+  const head = useTranslations('headers');
+  const btn = useTranslations('buttons');
   const headerRef = useRef<ElementRef<'header'>>(null);
 
   return (
@@ -177,7 +186,7 @@ export const Header = ({
                           iconTrailing={
                             <ChevronDown className='size-5 rotate-0 transition duration-200 ease-out group-aria-expanded:-rotate-180' />
                           }>
-                          {navItem.label}
+                          {head(navItem.label + '.title')}
                         </Button>
                         <Popover
                           className={({ isEntering, isExiting }) =>
@@ -212,7 +221,7 @@ export const Header = ({
                         size='lg'
                         color='link-gray'
                         className='rounded-md focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-focus-ring'>
-                        {navItem.label}
+                        {head(navItem.label)}
                       </Button>
                     )}
                   </li>
@@ -225,13 +234,13 @@ export const Header = ({
               color='secondary-gray'
               href='/login'
               size={isFloating ? 'md' : 'lg'}>
-              Log in
+              {btn('log_in')}
             </Button>
             <Button
               href='/signup'
               color='primary'
               size={isFloating ? 'md' : 'lg'}>
-              Sign up
+              {btn('sign_up')}
             </Button>
           </div>
 
@@ -284,13 +293,13 @@ export const Header = ({
                       navItem.menu ? (
                         <MobileNavItem
                           key={navItem.label}
-                          label={navItem.label}>
+                          label={head(navItem.label + '.title')}>
                           {navItem.menu}
                         </MobileNavItem>
                       ) : (
                         <MobileNavItem
                           key={navItem.label}
-                          label={navItem.label}
+                          label={head(navItem.label)}
                           href={navItem.href}
                         />
                       )

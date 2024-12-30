@@ -1,13 +1,12 @@
 import { NextRequestWithAuth, withAuth } from "next-auth/middleware";
 import createIntlMiddleware from "next-intl/middleware";
 import { NextFetchEvent, NextResponse } from "next/server";
+import { routing } from "@/i18n/routing";
 
-const locales = ["en", "de", "ja"] as const;
-type Locale = typeof locales[number];
-const defaultLocale: Locale = "en";
-
-function isLocale(locale: string | undefined): locale is Locale {
-  return locale ? (locales as readonly string[]).includes(locale) : false;
+function isLocale(locale: string | undefined) {
+  return locale
+    ? (routing.locales as readonly string[]).includes(locale)
+    : false;
 }
 
 export const middleware = async (
@@ -17,13 +16,6 @@ export const middleware = async (
   const { nextUrl } = req;
   const pathname = nextUrl.pathname;
   const pathSegments = pathname.split("/").filter(Boolean);
-  // Extract locale
-  const locale = isLocale(pathSegments[0]) ? pathSegments[0] : null;
-  // Redirect if no locale is found
-  if (!locale) {
-    const rewrittenUrl = new URL(`/${defaultLocale}${pathname}`, req.url);
-    return NextResponse.redirect(rewrittenUrl, 308);
-  }
 
   // Authentication middleware
   const authMiddleware = withAuth({
@@ -47,12 +39,11 @@ export const middleware = async (
   }
 
   // Locale middleware
-  const intlMiddleware = createIntlMiddleware({
-    locales: locales as readonly string[],
-    defaultLocale,
-  });
+  const intlMiddleware = createIntlMiddleware(routing);
 
   return intlMiddleware(req);
 };
 
-export const config = { matcher: ["/((?!_next|api|favicon.ico).*)"] };
+export const config = {
+  matcher: ["/((?!_next|api|favicon.ico).*)", "/(de|en)/:path*"],
+};

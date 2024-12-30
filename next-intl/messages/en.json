@@ -1,6 +1,126 @@
 {
+    "headers": {
+        "products": {
+            "title": "Products",
+            "blog": "Blog",
+            "blog_desc": "The latest industry new and guides curated by our expert team.",
+            "customer_stories": "Customer stories",
+            "customer_stories_desc": "Learn how our customers are using Untitled UI to 10x their growth.",
+            "video_tutorials": "Video tutorials",
+            "video_tutorials_desc": "Get up and running on our newest features and in-depth guides.",
+            "documentation": "Documentation",
+            "documentation_desc": "In-depth articles on our tools and technologies to empower teams.",
+            "help_and_support": "Help and support",
+            "help_and_support_desc": "Need help with something? Our expert team is here to help 24/7."
+        },
+        "services": {
+            "title": "Services",
+            "blog": "Blog",
+            "blog_desc": "The latest industry news, updates and info.",
+            "customer_stories": "Customer stories",
+            "customer_stories_desc": "Learn how our customers are making big changes.",
+            "video_tutorials": "Video tutorials",
+            "video_tutorials_desc": "Get up and running on new features and techniques.",
+            "documentation": "Documentation",
+            "documentation_desc": "All the boring stuff that you (hopefully won't) need.",
+            "video_title": "We've just released an update!",
+            "video_desc": "Check out the all new dashboard view. Pages now load faster."
+        },
+        "pricing": "Pricing",
+        "resources": {
+            "title": "Resources",
+            "desc": "Get started and learn more about our products.",
+            "use_cases": "Use cases",
+            "convert": "Convert",
+            "convert_desc": "Analyze conversion rates and improve your sales.",
+            "engage": "Engage",
+            "engage_desc": "Measure active usage and target areas of improvement.",
+            "retain": "Retain",
+            "retain_desc": "Find retention drivers and make your customers smile.",
+            "company": "Company",
+            "blog": "Blog",
+            "blog_desc": "The latest industry news, updates and info.",
+            "customer_stories": "Customer stories",
+            "customer_stories_desc": "Learn how our customers are making big changes.",
+            "video_tutorials": "Video tutorials",
+            "video_tutorials_desc": "Get up and running on new features and techniques."
+        },
+        "about": "About"
+    },
     "home": {
-        "title": "Hello world!",
-        "about": "Go to the about page"
+        "title": "People who care about your growth",
+        "desc": "Powerful, self-serve product and growth analytics to help you convert, engage, and retain more.",
+        "badges": {
+            "were_hiring": {
+                "title": "We're hiring!",
+                "desc": "Join our remote team"
+            }
+        },
+        "placeholders": {
+            "email": "Enter your email",
+            "password": "Enter your password"
+        },
+        "hints": {
+            "email": "We care about your data in our <tag>privacy policy</tag>."
+        }
+    },
+    "login": {
+        "title": "Welcome back",
+        "desc": "Please enter your details.",
+        "dont_have_account": "Don't have an account?",
+        "toasts": {
+            "success": "Welcome back! You're now logged in.",
+            "error": "There was an error logging you in. Please try again."
+        },
+        "placeholders": {
+            "email": "Enter your email"
+        },
+        "checkboxes": {
+            "remember_for_30days": "Remember for 30 days"
+        }
+    },
+    "sign_up": {
+        "title": "Start your free trial",
+        "desc": "Sign up in less than 2 minutes.",
+        "already_have_account": "Already have an account?",
+        "placeholders": {
+            "name": "Enter your name",
+            "email": "Enter your email",
+            "password": "Create a password"
+        },
+        "toasts": {
+            "success": "Welcome! You're now signed up.",
+            "error": "There was an error signing you up. Please try again."
+        },
+        "hints": {
+            "password": "Must be at least 8 characters."
+        }
+    },
+    "buttons": {
+        "get_started": "Get started",
+        "getting_started": "Getting started",
+        "setup_101": "Setup 101",
+        "adding_users": "Adding users",
+        "libraries_and_sdks": "Libraries and SDKs",
+        "adding_plugins": "Adding plugins",
+        "dashboard_templates": "Dashboard templates",
+        "log_in": "Log in",
+        "sign_up": "Sign up",
+        "sign_in": "Sign in",
+        "sign_up_with_google": "Sign up with Google",
+        "sign_in_with_google": "Sign in with Google",
+        "all_resources": "All Resources",
+        "documentation": "Documentation",
+        "view_all_resources": "View all resources",
+        "forgot_password": "Forgot password",
+        "about_us": "About us",
+        "press": "Press",
+        "careers": "Careers",
+        "legal": "Legal",
+        "support": "Support",
+        "contact": "Contact",
+        "dismiss": "Dismiss",
+        "changelog": "Changelog",
+        "cookie_settings": "Cookie settings"
     }
 }

@@ -34,6 +34,7 @@ import {
 import { NavMenuItemLink } from './base-components/nav-menu-item';
 import { FeaturedIconBase } from '@/components/foundations/featured-icon/featured-icons';
 import { Badge, BadgeWithDot } from '@/components/shared/badges/badges';
+import { useTranslations } from 'next-intl';
 
 export const DropdownMenuSimple = () => {
   const items = [
@@ -94,40 +95,41 @@ export const DropdownMenuSimple = () => {
   );
 };
 
-export const DropdownMenuSimpleWithFooter = () => {
+export const DropdownMenuSimpleWithFooter = ({
+  prefix,
+}: {
+  prefix: string;
+}) => {
+  const head = useTranslations('headers');
+  const btn = useTranslations('buttons');
   const items = [
     {
-      title: 'Blog',
-      subtitle:
-        'The latest industry new and guides curated by our expert team.',
+      title: 'blog',
+      subtitle: 'blog_desc',
       href: '/blog',
       Icon: BookClosed,
     },
     {
-      title: 'Customer stories',
-      subtitle:
-        'Learn how our customers are using Untitled UI to 10x their growth.',
+      title: 'customer_stories',
+      subtitle: 'customer_stories_desc',
       href: '/customer-stories',
       Icon: Stars02,
     },
     {
-      title: 'Video tutorials',
-      subtitle:
-        'Get up and running on our newest features and in-depth guides.',
+      title: 'video_tutorials',
+      subtitle: 'video_tutorials_desc',
       href: '/tutorials',
       Icon: PlayCircle,
     },
     {
-      title: 'Documentation',
-      subtitle:
-        'In-depth articles on our tools and technologies to empower teams.',
+      title: 'documentation',
+      subtitle: 'documentation_desc',
       href: '/docs',
       Icon: FileCode01,
     },
     {
-      title: 'Help and support',
-      subtitle:
-        'Need help with something? Our expert team is here to help 24/7.',
+      title: 'help_and_support',
+      subtitle: 'help_and_support_desc',
       href: '/help',
       Icon: LifeBuoy01,
     },
@@ -141,8 +143,8 @@ export const DropdownMenuSimpleWithFooter = () => {
             <li>
               <NavMenuItemLink
                 icon={Icon}
-                title={title}
-                subtitle={subtitle}
+                title={head(prefix + '.' + title)}
+                subtitle={head(prefix + '.' + subtitle)}
                 href={href}
               />
             </li>
@@ -154,7 +156,7 @@ export const DropdownMenuSimpleWithFooter = () => {
             color='link-color'
             size='lg'
             iconTrailing={<ArrowRight className='size-5' />}>
-            All resources
+            {btn('all_resources')}
           </Button>
         </div>
       </nav>
@@ -164,71 +166,66 @@ export const DropdownMenuSimpleWithFooter = () => {
 
 const menuItemsSimpleTwoColumns = [
   {
-    title: 'Blog',
-    shortSubtitle: 'The latest industry news.',
-    subtitle: 'The latest industry new and guides curated by our expert team.',
+    title: 'blog',
+    shortSubtitle: 'blog_short_desc',
+    subtitle: 'blog_desc',
     href: '/blog',
     Icon: BookClosed,
   },
   {
-    title: 'Customer stories',
-    shortSubtitle: 'Learn how our customers.',
-    subtitle:
-      'Learn how our customers are using Untitled UI to 10x their growth.',
+    title: 'customer_stories',
+    shortSubtitle: 'customer_stories_short_desc',
+    subtitle: 'customer_stories_desc',
     href: '/customer-stories',
     Icon: Stars02,
   },
   {
-    title: 'Video tutorials',
-    shortSubtitle: 'New features and techniques.',
-    subtitle: 'Get up and running on our newest features and in-depth guides.',
+    title: 'video_tutorials',
+    shortSubtitle: 'video_tutorials_short_desc',
+    subtitle: 'video_tutorials_desc',
     href: '/tutorials',
     Icon: PlayCircle,
   },
   {
-    title: 'Documentation',
-    shortSubtitle: 'All the boring stuff.',
-    subtitle:
-      'In-depth articles on our tools and technologies to empower teams.',
+    title: 'documentation',
+    shortSubtitle: 'documentation_short_desc',
+    subtitle: 'documentation_desc',
     href: '/docs',
     Icon: FileCode01,
   },
   {
-    title: 'Help and Support',
-    subtitle: 'Need help with something? Our expert team is here to help 24/7.',
+    title: 'help_and_support',
+    subtitle: 'help_and_support_desc',
     href: '/help',
     Icon: LifeBuoy01,
   },
   {
-    title: 'API reference',
-    subtitle:
-      'In-depth reference doc and helpful guides for our dashboard API.',
+    title: 'api_reference',
+    subtitle: 'api_reference_desc',
     href: '/api',
     Icon: Codepen,
   },
   {
-    title: 'Setup 101',
-    subtitle: 'Get up and running as fast as possible with our 101 guide.',
+    title: 'setup_101',
+    subtitle: 'setup_101_desc',
     href: '/setup',
     Icon: Cube01,
   },
   {
-    title: 'Podcast',
-    subtitle:
-      'Interviews and discussion about the industry and the latest tech.',
+    title: 'podcast',
+    subtitle: 'podcast_desc',
     href: '/podcast',
     Icon: Signal01,
   },
   {
-    title: 'University',
-    subtitle:
-      'Master your craft with our free video courses and in-depth articles.',
+    title: 'university',
+    subtitle: 'university_desc',
     href: '/university',
     Icon: BookOpen01,
   },
   {
-    title: 'Changelog',
-    subtitle: 'Check out the latest updates and releases from our team.',
+    title: 'changelog',
+    subtitle: 'changelog_desc',
     href: '/changelog',
     Icon: LayersThree01,
   },
@@ -246,61 +243,61 @@ const megaMenuItems: {
   }[];
 }[] = [
   {
-    title: 'Products',
+    title: 'products',
     items: [
       {
-        title: 'Interactive reports',
-        shortSubtitle: 'Learn about your users.',
+        title: 'interactive_reports',
+        shortSubtitle: 'interactive_reports_desc',
         href: '/',
         Icon: ChartBreakoutCircle,
       },
       {
-        title: 'Team dashboard',
-        shortSubtitle: 'Monitor your metrics.',
+        title: 'team_dashboard',
+        shortSubtitle: 'team_dashboard_desc',
         href: '/',
         Icon: Monitor04,
       },
       {
-        title: 'Limitless segmentation',
-        shortSubtitle: 'Surface hidden trends.',
+        title: 'limitless_segmentation',
+        shortSubtitle: 'limitless_segmentation_desc',
         href: '/',
         Icon: PieChart03,
       },
       {
-        title: 'Group analytics',
-        shortSubtitle: 'Measure B2B accoubt health.',
+        title: 'group_analytics',
+        shortSubtitle: 'group_analytics_desc',
         href: '/',
         Icon: BarLineChart,
       },
     ],
   },
   {
-    title: 'Use cases',
+    title: 'use_cases',
     items: [
       {
-        title: 'Convert',
-        subtitle: 'Analyze conversion rates and improve your sales.',
-        shortSubtitle: 'Analyze conversion rates.',
+        title: 'convert',
+        subtitle: 'convert_desc',
+        shortSubtitle: 'convert_short_desc',
         href: '/',
         Icon: CheckCircleBroken,
       },
       {
-        title: 'Engage',
-        subtitle: 'Measure active usage and target areas of improvement.',
-        shortSubtitle: 'Measure active usage.',
+        title: 'engage',
+        subtitle: 'engage_desc',
+        shortSubtitle: 'engage_short_desc',
         href: '/',
         Icon: MessageSmileSquare,
       },
       {
-        title: 'Retain',
-        subtitle: 'Find retention drivers and make your customers smile.',
-        shortSubtitle: 'Find retention drivers.',
+        title: 'retain',
+        subtitle: 'retain_desc',
+        shortSubtitle: 'retain_short_desc',
         href: '/',
         Icon: CurrencyDollarCircle,
       },
       {
-        title: 'Grow',
-        shortSubtitle: 'Grow your user base faster.',
+        title: 'grow',
+        shortSubtitle: 'grow_short_desc',
         href: '/',
         Icon: LineChartUp05,
         badge: (
@@ -315,59 +312,59 @@ const megaMenuItems: {
     ],
   },
   {
-    title: 'Company',
+    title: 'company',
     items: [
       {
-        title: 'Blog',
-        shortSubtitle: 'The latest industry news.',
-        subtitle: 'The latest industry news, updates and info.',
+        title: 'blog',
+        shortSubtitle: 'blog_short_desc',
+        subtitle: 'blog_desc',
         href: '/',
         Icon: BookClosed,
       },
       {
-        title: 'Customer stories',
-        shortSubtitle: 'Learn how our customers.',
-        subtitle: 'Learn how our customers are making big changes.',
+        title: 'customer_stories',
+        shortSubtitle: 'customer_stories_short_desc',
+        subtitle: 'customer_stories_desc',
         href: '/',
         Icon: Stars02,
       },
       {
-        title: 'Video tutorials',
-        shortSubtitle: 'New features and techniques.',
-        subtitle: 'Get up and running on new features and techniques.',
+        title: 'video_tutorials',
+        shortSubtitle: 'video_tutorials_short_desc',
+        subtitle: 'video_tutorials_desc',
         href: '/',
         Icon: PlayCircle,
       },
       {
-        title: 'Documentation',
-        shortSubtitle: 'All the boring stuff.',
-        subtitle: "All the boring stuff that you (hopefully won't) need.",
+        title: 'documentation',
+        shortSubtitle: 'documentation_short_desc',
+        subtitle: 'documentation_desc',
         href: '/',
         Icon: FileCode01,
       },
     ],
   },
   {
-    title: 'Resources',
+    title: 'recources',
     items: [
       {
-        title: 'About us',
-        shortSubtitle: 'Learn about our story.',
-        subtitle: 'Learn about our story and our mission statement.',
+        title: 'about_us',
+        shortSubtitle: 'about_us_short_desc',
+        subtitle: 'about_us_desc',
         href: '/',
         Icon: Flag06,
       },
       {
-        title: 'Press',
-        shortSubtitle: 'News and press resources.',
-        subtitle: 'News and writings, press releases, and press resources.',
+        title: 'press',
+        shortSubtitle: 'press_short_desc',
+        subtitle: 'press_desc',
         href: '/',
         Icon: MessageCircle01,
       },
       {
-        title: 'Careers',
-        shortSubtitle: 'Join our team!',
-        subtitle: "We're always looking for talented people. Join our team!",
+        title: 'careers',
+        shortSubtitle: 'careers_short_desc',
+        subtitle: 'careers_desc',
         href: '/',
         Icon: Users01,
         badge: (
@@ -380,9 +377,9 @@ const megaMenuItems: {
         ),
       },
       {
-        title: 'Legal',
-        shortSubtitle: 'All the boring stuff.',
-        subtitle: 'All the boring stuff that we Dan from legal made us add.',
+        title: 'legal',
+        shortSubtitle: 'legal_short_desc',
+        subtitle: 'legal_desc',
         href: '/',
         Icon: Folder,
       },
@@ -528,7 +525,10 @@ export const DropdownMenuSimpleTwoColumnsWithFooter = () => {
   );
 };
 
-export const DropdownMenuFeatureCard = () => {
+export const DropdownMenuFeatureCard = ({ prefix }: { prefix: string }) => {
+  const head = useTranslations('headers');
+  const btn = useTranslations('buttons');
+
   return (
     <div className='px-3 pb-2 md:max-w-[640px] md:p-0'>
       <nav className='flex flex-col overflow-hidden rounded-xl bg-primary shadow-xs ring-1 ring-border-secondary md:w-max md:flex-row md:rounded-2xl md:shadow-lg'>
@@ -539,8 +539,8 @@ export const DropdownMenuFeatureCard = () => {
               <li key={title + href}>
                 <NavMenuItemLink
                   icon={Icon}
-                  title={title}
-                  subtitle={subtitle}
+                  title={head(prefix + '.' + title)}
+                  subtitle={head(prefix + '.' + subtitle)}
                   badge={badge}
                   href={href}
                 />
@@ -550,21 +550,21 @@ export const DropdownMenuFeatureCard = () => {
         <div className='bg-secondary px-1 pb-3 pt-2 md:max-w-[304px] md:px-2'>
           <FeatureCardVertical
             imgSrc='/marketing/smiling-girl.png'
-            title="We've just released an update!"
-            description='Check out the all new dashboard view. Pages now load faster.'
+            title={head(prefix + '.video_title')}
+            description={head(prefix + '.video_desc')}
             actionsContent={
               <div className='inline-flex gap-3'>
                 <Button
                   color='link-gray'
                   size='sm'
                   href='#'>
-                  Dismiss
+                  {btn('dismiss')}
                 </Button>
                 <Button
                   color='link-color'
                   size='sm'
                   href='#'>
-                  Changelog
+                  {btn('changelog')}
                 </Button>
               </div>
             }
@@ -575,36 +575,43 @@ export const DropdownMenuFeatureCard = () => {
   );
 };
 
-export const DropdownMenuWithTwoColsAndLinksAndFooter = () => {
+export const DropdownMenuWithTwoColsAndLinksAndFooter = ({
+  prefix,
+}: {
+  prefix: string;
+}) => {
+  const head = useTranslations('headers');
+  const btn = useTranslations('buttons');
+
   return (
     <div className='px-3 pb-2 md:max-w-[800px] md:p-0'>
       <nav className='overflow-hidden rounded-xl bg-secondary shadow-xs ring-1 ring-inset ring-border-secondary md:rounded-2xl md:shadow-lg'>
         <div className='flex flex-col gap-5 rounded-xl bg-primary pb-5 pt-4 ring-1 ring-inset ring-border-secondary md:gap-6 md:rounded-t-2xl md:p-6 md:pt-5'>
           <div className='flex flex-col gap-1 px-4 md:p-0'>
-            <p className='text-primary tt-md-semi'>Resources</p>
-            <p className='text-tertiary tt-sm'>
-              Get started and learn more about our products.
-            </p>
+            <p className='text-primary tt-md-semi'>{head(prefix + '.title')}</p>
+            <p className='text-tertiary tt-sm'>{head(prefix + '.desc')}</p>
           </div>
 
           <div className='flex flex-col gap-5 md:flex-row md:gap-8 md:py-0'>
             <div className='-mb-px flex flex-col gap-4 border-b border-b-secondary px-4 pb-5 md:mb-0 md:gap-5 md:border-none md:p-0'>
-              <h3 className='text-brand-tertiary tt-sm-semi'>Get started</h3>
+              <h3 className='text-brand-tertiary tt-sm-semi'>
+                {btn('getting_started')}
+              </h3>
               <ul className='flex flex-col gap-3'>
                 {[
-                  { title: 'Setup 101', href: '#' },
-                  { title: 'Adding users', href: '#' },
-                  { title: 'Video tutorials', href: '#' },
-                  { title: 'Libraries and SDKs', href: '#' },
-                  { title: 'Adding plugins', href: '#' },
-                  { title: 'Dashboard templates', href: '#' },
+                  { title: 'setup_101', href: '#' },
+                  { title: 'adding_users', href: '#' },
+                  { title: 'video_tutorials', href: '#' },
+                  { title: 'libraries_and_sdks', href: '#' },
+                  { title: 'adding_plugins', href: '#' },
+                  { title: 'dashboard_templates', href: '#' },
                 ].map((item) => (
                   <li>
                     <Button
                       href={item.href}
                       color='link-gray'
                       size='lg'>
-                      {item.title}
+                      {btn(item.title)}
                     </Button>
                   </li>
                 ))}
@@ -615,7 +622,7 @@ export const DropdownMenuWithTwoColsAndLinksAndFooter = () => {
               {megaMenuItems.slice(1, 3).map((nav) => (
                 <div key={nav.title}>
                   <h3 className='mb-2 px-4 text-brand-tertiary tt-sm-semi md:px-0'>
-                    {nav.title}
+                    {head(prefix + '.' + nav.title)}
                   </h3>
                   <ul className='flex flex-col gap-0.5'>
                     {nav.items
@@ -624,8 +631,8 @@ export const DropdownMenuWithTwoColsAndLinksAndFooter = () => {
                         <li key={title}>
                           <NavMenuItemLink
                             icon={Icon}
-                            title={title}
-                            subtitle={subtitle}
+                            title={head(prefix + '.' + title)}
+                            subtitle={head(prefix + '.' + subtitle)}
                             badge={badge}
                             href={href}
                           />
@@ -645,21 +652,21 @@ export const DropdownMenuWithTwoColsAndLinksAndFooter = () => {
             size='md'
             iconLeading={BookOpen01}
             className='hidden md:flex'>
-            Documentation
+            {btn('documentation')}
           </Button>
           <Button
             href='#'
             color='primary'
             size='md'
             className='hidden md:flex'>
-            View all resources
+            {btn('view_all_resources')}
           </Button>
           <Button
             href='#'
             color='primary'
             size='sm'
             className='md:hidden'>
-            View all resources
+            {btn('view_all_resources')}
           </Button>
         </div>
       </nav>

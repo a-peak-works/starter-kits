@@ -28,6 +28,7 @@ import { useTranslations } from 'next-intl';
 export const HomeScreen = () => {
   const { systemTheme } = useTheme();
   const t = useTranslations('home');
+  const btn = useTranslations('buttons');
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -61,8 +62,8 @@ export const HomeScreen = () => {
               <BadgeGroup
                 className='hidden md:flex'
                 size='lg'
-                addonText="We're hiring!"
-                text='Join our remote team'
+                addonText={t('badges.were_hiring.title')}
+                text={t('badges.were_hiring.desc')}
                 iconTrailing={ArrowRight}
                 theme='modern'
                 color='brand'
@@ -70,8 +71,8 @@ export const HomeScreen = () => {
               <BadgeGroup
                 className='md:hidden'
                 size='md'
-                addonText="We're hiring!"
-                text='Join our remote team'
+                addonText={t('badges.were_hiring.title')}
+                text={t('badges.were_hiring.desc')}
                 iconTrailing={ArrowRight}
                 theme='modern'
                 color='brand'
@@ -79,11 +80,10 @@ export const HomeScreen = () => {
             </Link>
 
             <h1 className='mt-4 text-primary td-md-semi md:td-lg-semi lg:td-xl-semi'>
-              People who care about your growth
+              {t('title')}
             </h1>
             <p className='mt-4 text-tertiary tt-lg md:mt-6 md:max-w-lg md:tt-xl'>
-              Powerful, self-serve product and growth analytics to help you
-              convert, engage, and retain more.
+              {t('desc')}
             </p>
 
             <Form
@@ -93,27 +93,26 @@ export const HomeScreen = () => {
                 size='md'
                 type='email'
                 isRequired
-                validate={(value) =>
-                  value.includes('@') || 'Please enter a valid email'
-                }
                 wrapperClassName='py-0.5'
-                placeholder='Enter your email'
+                placeholder={t('placeholders.email')}
                 hint={
                   <span>
-                    We care about your data in our{' '}
-                    <a
-                      href='#'
-                      className='rounded-sm underline underline-offset-3 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-focus-ring'>
-                      privacy policy
-                    </a>
-                    .
+                    {t.rich('hints.email', {
+                      tag: (m) => (
+                        <a
+                          href='#'
+                          className='rounded-sm underline underline-offset-3 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-focus-ring'>
+                          {m}
+                        </a>
+                      ),
+                    })}
                   </span>
                 }
               />
               <Button
                 type='submit'
                 size='xl'>
-                Get started
+                {btn('get_started')}
               </Button>
             </Form>
           </div>

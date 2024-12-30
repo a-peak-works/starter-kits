@@ -1,6 +1,126 @@
 {
-    "HomePage": {
-        "title": "Hello world!",
-        "about": "Go to the about page"
+    "headers": {
+        "products": {
+            "title": "Produkte",
+            "blog": "Blog",
+            "blog_desc": "Die neuesten Branchenneuigkeiten und Anleitungen, kuratiert von unserem Expertenteam.",
+            "customer_stories": "Kundengeschichten",
+            "customer_stories_desc": "Erfahren Sie, wie unsere Kunden Untitled UI nutzen, um ihr Wachstum zu verzehnfachen.",
+            "video_tutorials": "Video-Tutorials",
+            "video_tutorials_desc": "Lernen Sie unsere neuesten Funktionen und ausführliche Anleitungen kennen.",
+            "documentation": "Dokumentation",
+            "documentation_desc": "Detaillierte Artikel zu unseren Tools und Technologien, um Teams zu unterstützen.",
+            "help_and_support": "Hilfe und Support",
+            "help_and_support_desc": "Brauchen Sie Hilfe? Unser Expertenteam ist rund um die Uhr für Sie da."
+        },
+        "services": {
+            "title": "Dienstleistungen",
+            "blog": "Blog",
+            "blog_desc": "Die neuesten Branchenneuigkeiten, Updates und Informationen.",
+            "customer_stories": "Kundengeschichten",
+            "customer_stories_desc": "Erfahren Sie, wie unsere Kunden große Veränderungen bewirken.",
+            "video_tutorials": "Video-Tutorials",
+            "video_tutorials_desc": "Erfahren Sie alles über neue Funktionen und Techniken.",
+            "documentation": "Dokumentation",
+            "documentation_desc": "Alles, was Sie (hoffentlich nicht) brauchen.",
+            "video_title": "Wir haben ein Update veröffentlicht!",
+            "video_desc": "Schauen Sie sich die neue Dashboard-Ansicht an. Seiten laden jetzt schneller."
+        },
+        "pricing": "Preise",
+        "resources": {
+            "title": "Ressourcen",
+            "desc": "Erfahren Sie mehr über unsere Produkte und beginnen Sie noch heute.",
+            "use_cases": "Anwendungsfälle",
+            "convert": "Konvertieren",
+            "convert_desc": "Analysieren Sie Konversionsraten und verbessern Sie Ihre Verkäufe.",
+            "engage": "Engagieren",
+            "engage_desc": "Messen Sie die aktive Nutzung und identifizieren Sie Verbesserungsmöglichkeiten.",
+            "retain": "Binden",
+            "retain_desc": "Finden Sie Bindungstreiber und machen Sie Ihre Kunden glücklich.",
+            "company": "Unternehmen",
+            "blog": "Blog",
+            "blog_desc": "Die neuesten Branchenneuigkeiten, Updates und Informationen.",
+            "customer_stories": "Kundengeschichten",
+            "customer_stories_desc": "Erfahren Sie, wie unsere Kunden große Veränderungen bewirken.",
+            "video_tutorials": "Video-Tutorials",
+            "video_tutorials_desc": "Erfahren Sie alles über neue Funktionen und Techniken."
+        },
+        "about": "Über uns"
+    },
+    "home": {
+        "title": "Menschen, die sich um Ihr Wachstum kümmern",
+        "desc": "Leistungsstarke, selbstbedienbare Produkt- und Wachstumsanalysen, um mehr zu konvertieren, zu engagieren und zu binden.",
+        "badges": {
+            "were_hiring": {
+                "title": "Wir stellen ein!",
+                "desc": "Werden Sie Teil unseres Remote-Teams"
+            }
+        },
+        "placeholders": {
+            "email": "Geben Sie Ihre E-Mail ein",
+            "password": "Geben Sie Ihr Passwort ein"
+        },
+        "hints": {
+            "email": "Wir kümmern uns um Ihre Daten in unserer <tag>Datenschutzerklärung</tag>."
+        }
+    },
+    "login": {
+        "title": "Willkommen zurück",
+        "desc": "Bitte geben Sie Ihre Daten ein.",
+        "dont_have_account": "Noch kein Konto?",
+        "placeholders": {
+            "email": "Geben Sie Ihre E-Mail ein"
+        },
+        "toasts": {
+            "success": "Willkommen zurück! Sie sind jetzt angemeldet.",
+            "error": "Beim Anmelden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+        },
+        "checkboxes": {
+            "remember_for_30days": "Für 30 Tage merken"
+        }
+    },
+    "sign_up": {
+        "title": "Starten Sie Ihre kostenlose Testversion",
+        "desc": "Melden Sie sich in weniger als 2 Minuten an.",
+        "already_have_account": "Haben Sie bereits ein Konto?",
+        "placeholders": {
+            "name": "Geben Sie Ihren Namen ein",
+            "email": "Geben Sie Ihre E-Mail ein",
+            "password": "Erstellen Sie ein Passwort"
+        },
+        "toasts": {
+            "success": "Willkommen! Sie sind jetzt angemeldet.",
+            "error": "Beim Anmelden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+        },
+        "hints": {
+            "password": "Muss mindestens 8 Zeichen lang sein."
+        }
+    },
+    "buttons": {
+        "get_started": "Loslegen",
+        "getting_started": "Erste Schritte",
+        "setup_101": "Einrichtung 101",
+        "adding_users": "Benutzer hinzufügen",
+        "libraries_and_sdks": "Bibliotheken und SDKs",
+        "adding_plugins": "Plugins hinzufügen",
+        "dashboard_templates": "Dashboard-Vorlagen",
+        "log_in": "Anmelden",
+        "sign_up": "Registrieren",
+        "sign_in": "Einloggen",
+        "sign_up_with_google": "Mit Google registrieren",
+        "sign_in_with_google": "Mit Google einloggen",
+        "all_resources": "Alle Ressourcen",
+        "documentation": "Dokumentation",
+        "view_all_resources": "Alle Ressourcen anzeigen",
+        "forgot_password": "Passwort vergessen",
+        "about_us": "Über uns",
+        "press": "Presse",
+        "careers": "Karriere",
+        "legal": "Rechtliches",
+        "support": "Support",
+        "contact": "Kontakt",
+        "dismiss": "Ablehnen",
+        "changelog": "Änderungsprotokoll",
+        "cookie_settings": "Cookie-Einstellungen"
     }
 }

@@ -13,7 +13,7 @@ import React, {
   isValidElement,
   DetailedHTMLProps,
 } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 
 export const styles = sortCx({
   common: {
@@ -143,7 +143,6 @@ const Button = forwardRef<HTMLButtonElement, Props>(
 
     return (
       <Component
-        data-disabled={disabled}
         isDisabled={disabled}
         type='button'
         // Remove `any` type assertion after splitting

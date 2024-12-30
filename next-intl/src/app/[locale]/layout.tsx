@@ -8,7 +8,7 @@ import localFont from 'next/font/local';
 import { Theme } from '@/providers/theme';
 import { cx } from '@/components/utils';
 import { NextAuthProvider } from '@/providers/next-auth';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
